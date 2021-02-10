@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event:SimpleEvent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:event="http:///com/tibco/cep/designtime/core/model/event" namespace="/Events/" folder="/Events/" name="PostEmpl" description="" GUID="1FEDEEAD-D427-9525-F1A5-EBA653AB5882" ownerProjectName="HTTPChannel" superEventPath="" ttlUnits="Seconds" channelURI="/Channels/HTTP" destinationName="PostEmpl">
+  <extendedProperties/>
+  <properties name="EmplID" ownerProjectName="HTTPChannel" type="int" ownerPath="/Events/PostEmpl"/>
+  <properties name="EmployeeName" ownerProjectName="HTTPChannel" ownerPath="/Events/PostEmpl"/>
+  <properties name="CompanyName" ownerProjectName="HTTPChannel" ownerPath="/Events/PostEmpl"/>
+  <properties name="Address" ownerProjectName="HTTPChannel" ownerPath="/Events/PostEmpl"/>
+  <properties name="City" ownerProjectName="HTTPChannel" ownerPath="/Events/PostEmpl"/>
+  <properties name="State" ownerProjectName="HTTPChannel" ownerPath="/Events/PostEmpl"/>
+  <properties name="Zip" ownerProjectName="HTTPChannel" type="int" ownerPath="/Events/PostEmpl"/>
+  <expiryAction folder="/Events/PostEmpl" name="PostEmployee_expiryAction" ownerProjectName="HTTPChannel" actionText="" conditionText="">
+    <symbols>
+      <symbolList idName="postemployee" type="/Events/PostEmpl"/>
+    </symbols>
+  </expiryAction>
+</event:SimpleEvent>

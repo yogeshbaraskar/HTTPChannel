@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channel:Channel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:channel="http:///com/tibco/cep/designtime/core/model/service/channel" xmlns:designtime="http:///com/tibco/cep/designtime/core/model/designtime_ontology.ecore" namespace="/Channels/" folder="/Channels/" name="HTTP" description="" GUID="8755A7D2-B9E2-6FCF-0413-C6880122E224" ownerProjectName="HTTPChannel">
+  <driver xsi:type="channel:HttpChannelDriverConfig" configMethod="REFERENCE" reference="/SharedResources/HTTPConnection.sharedhttp" label="HTTP" channel="/">
+    <destinations name="PostEmpl" description="" GUID="A478DE34-4A5E-6E43-677F-F023D0C1DB5B" ownerProjectName="HTTPChannel" eventURI="/Events/PostEmpl" serializerDeserializerClass="com.tibco.cep.driver.http.serializer.RESTMessageSerializer" driverConfig="//@driver">
+      <properties>
+        <properties xsi:type="designtime:SimpleProperty" name="IncludeEventType" value="ALWAYS" mandatory="true"/>
+        <properties xsi:type="designtime:SimpleProperty" name="be.http.type" value="DEFAULT"/>
+        <properties xsi:type="designtime:SimpleProperty" name="be.http.contextPath" value=""/>
+        <properties xsi:type="designtime:SimpleProperty" name="be.http.pageFlowFunction" value=""/>
+      </properties>
+    </destinations>
+    <destinations name="GetEmplInfo" description="" GUID="4364BE07-F98E-9633-5863-E3E37380CB89" ownerProjectName="HTTPChannel" eventURI="/Events/GetEmplInfo" serializerDeserializerClass="com.tibco.cep.driver.http.serializer.RESTMessageSerializer" driverConfig="//@driver">
+      <properties>
+        <properties xsi:type="designtime:SimpleProperty" name="IncludeEventType" value="ALWAYS" mandatory="true"/>
+        <properties xsi:type="designtime:SimpleProperty" name="be.http.type" value="DEFAULT"/>
+        <properties xsi:type="designtime:SimpleProperty" name="be.http.contextPath" value=""/>
+        <properties xsi:type="designtime:SimpleProperty" name="be.http.pageFlowFunction" value=""/>
+      </properties>
+    </destinations>
+    <destinations name="GetCertifyRequest" description="" GUID="3295613F-5F02-337E-616B-83EC364096C7" ownerProjectName="HTTPChannel" eventURI="/Events/GetCertifyRequest" serializerDeserializerClass="com.tibco.cep.driver.http.serializer.RESTMessageSerializer" driverConfig="//@driver">
+      <properties>
+        <properties xsi:type="designtime:SimpleProperty" name="be.http.jsonPayload" value="false"/>
+        <properties xsi:type="designtime:SimpleProperty" name="be.http.IncludeEventType" value="NEVER"/>
+        <properties xsi:type="designtime:SimpleProperty" name="be.http.type" value="DEFAULT"/>
+        <properties xsi:type="designtime:SimpleProperty" name="be.http.contextPath" value=""/>
+        <properties xsi:type="designtime:SimpleProperty" name="be.http.pageFlowFunction" value=""/>
+      </properties>
+    </destinations>
+    <extendedConfiguration>
+      <properties name="serverType" value="TOMCAT"/>
+    </extendedConfiguration>
+    <driverType xsi:type="channel:DriverTypeInfo" driverTypeName="HTTP"/>
+    <choice value="TOMCAT">
+      <extendedConfiguration>
+        <properties name="be.http.debug" value="false"/>
+        <properties name="be.http.connectionTimeout" value="60000"/>
+        <properties name="be.http.acceptCount" value="-1"/>
+        <properties name="be.http.socketBufferSize" value="9000"/>
+        <properties name="be.http.maxProcessors" value="-1"/>
+        <properties name="be.http.connectionLinger" value="-1"/>
+        <properties name="be.http.enableDNSLookups" value="false"/>
+        <properties name="be.http.tcpNoDelay" value="true"/>
+        <properties name="be.http.compression" value="off"/>
+        <properties name="be.http.useBodyEncodingForURI" value="false"/>
+        <properties name="be.http.URIEncoding" value=""/>
+        <properties name="be.http.maxKeepAliveRequests" value="-1"/>
+        <properties name="be.http.maxHttpHeaderSize" value="4096"/>
+        <properties name="be.http.maxPostSize" value="2097152"/>
+        <properties name="be.http.maxSavePostSize" value="4096"/>
+        <properties name="be.http.scheme" value=""/>
+        <properties name="be.http.maxSpareThreads" value="50"/>
+        <properties name="be.http.minSpareThreads" value="4"/>
+        <properties name="be.http.compressableMimeType" value="text/html,text/xml,text/plain"/>
+        <properties name="be.http.restrictedUserAgents" value=""/>
+        <properties name="be.http.docRoot" value=""/>
+        <properties name="be.http.docPage" value=""/>
+        <properties name="be.http.ssl_server_keymanageralgorithm" value=""/>
+        <properties name="be.http.ssl_server_trustmanageralgorithm" value=""/>
+        <properties name="be.http.ssl_server_enabledprotocols" value=""/>
+        <properties name="be.http.ssl_server_ciphers" value=""/>
+        <properties name="be.http.connectorType" value="NIO"/>
+        <properties name="be.http.connectorInstances" value="1"/>
+        <properties name="be.http.sessionTimeout" value="1800"/>
+      </extendedConfiguration>
+    </choice>
+  </driver>
+</channel:Channel>

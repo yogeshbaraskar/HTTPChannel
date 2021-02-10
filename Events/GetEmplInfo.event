@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event:SimpleEvent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:event="http:///com/tibco/cep/designtime/core/model/event" namespace="/Events/" folder="/Events/" name="GetEmplInfo" description="" GUID="1D6A7D27-A6D9-A174-6C09-20857DD42DE7" ownerProjectName="HTTPChannel" superEventPath="" ttlUnits="Seconds" channelURI="/Channels/HTTP" destinationName="GetEmplInfo">
+  <extendedProperties/>
+  <properties name="EmplID" ownerProjectName="HTTPChannel" type="int" ownerPath="/Events/GetEmplInfo"/>
+  <expiryAction folder="/Events/GetEmplInfoEvent" name="GetEmplInfoEvent_expiryAction" ownerProjectName="HTTPChannel" actionText="" conditionText="">
+    <symbols>
+      <symbolList idName="getemplinfoevent" type="/Events/GetEmplInfo"/>
+    </symbols>
+  </expiryAction>
+</event:SimpleEvent>

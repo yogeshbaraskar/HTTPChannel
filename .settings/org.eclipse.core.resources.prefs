@@ -1,0 +1,9 @@
+#Tue Apr 20 16:45:26 GMT+05:30 2010
+eclipse.preferences.version=1
+encoding//Channels/HTTP.channel=UTF-8
+encoding//Events/GetEmplInfo.event=UTF-8
+encoding//Events/GetEmplInfoResponse.event=UTF-8
+encoding//Events/PostEmpl.event=UTF-8
+encoding//Events/PostEmplResponse.event=UTF-8
+encoding//SharedResources/HTTP.sharedhttp=UTF-8
+encoding/HTTP.cdd=UTF-8

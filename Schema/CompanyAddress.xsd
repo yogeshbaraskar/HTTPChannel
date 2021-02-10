@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns="http://tibco.com/qa/xsd/address"
+	 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 targetNamespace="http://tibco.com/qa/xsd/address"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="EmployeeName" type="xs:string"/>
+	<xs:element name="CompanyName" type="xs:string"/>
+	<xs:element name="Address" type="xs:string"/>
+	<xs:element name="City" type="xs:string"/>
+	<xs:element name="State" type="xs:string"/>
+	<xs:element name="Zip" type="xs:int"/>
+
+	<xs:complexType name="Address_Request_Type">
+		<xs:sequence>
+
+			<xs:element ref="EmployeeName"/>
+			<xs:element ref="CompanyName"/>
+			<xs:element ref="Address"/>
+			<xs:element ref="City"/>
+			<xs:element ref="State"/>
+			<xs:element ref="Zip"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Address_Request_Element">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="EmployeeName"/>
+				<xs:element ref="CompanyName"/>
+				<xs:element ref="Address"/>
+				<xs:element ref="City"/>
+				<xs:element ref="State"/>
+				<xs:element ref="Zip"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Address_Response_Type">
+		<xs:sequence>
+			<xs:element ref="EmployeeName"/>
+			<xs:element ref="CompanyName"/>
+			<xs:element ref="Address"/>
+			<xs:element ref="City"/>
+			<xs:element ref="State"/>
+			<xs:element ref="Zip"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Address_Response_Element">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="EmployeeName"/>
+				<xs:element ref="CompanyName"/>
+				<xs:element ref="Address"/>
+				<xs:element ref="City"/>
+				<xs:element ref="State"/>
+				<xs:element ref="Zip"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Address_Fault_Element">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CustomFault_Element"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CustomFault_Element">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CustomFault_String"/>
+				<xs:element ref="CustomFault_Code"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CustomFault_String" type="xs:string"/>
+	<xs:element name="CustomFault_Code" type="xs:int"/>
+</xs:schema>

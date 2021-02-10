@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event:SimpleEvent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:event="http:///com/tibco/cep/designtime/core/model/event" namespace="/Events/" folder="/Events/" name="GetCertifyRequest" description="" GUID="D17DD978-8CA2-2514-078C-180F74B39B4F" ownerProjectName="HTTPChannel" superEventPath="" ttlUnits="Seconds" channelURI="/Channels/HTTP" destinationName="GetCertifyRequest">
+  <properties name="EmplID" ownerProjectName="HTTPChannel" type="int" ownerPath="/Events/GetCertifyRequest"/>
+  <namespaceEntries prefix="xsd" namespace="http://www.w3.org/2001/XMLSchema"/>
+  <expiryAction name="GetCertifyRequest_expiryAction" ownerProjectName="HTTPChannel" actionText="" conditionText="">
+    <symbols>
+      <symbolList idName="getcertifyrequest" type="/Events/GetCertifyRequest"/>
+    </symbols>
+  </expiryAction>
+</event:SimpleEvent>

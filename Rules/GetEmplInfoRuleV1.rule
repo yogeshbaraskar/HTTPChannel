@@ -1,0 +1,42 @@
+/**
+ * @description 
+ * @author 
+ */
+rule Rules.GetEmplInfoRuleV1 {
+	attribute {
+		priority = 5;
+		forwardChain = true;
+	}
+	declare {
+		Events.GetEmplInfo	getemplinfo;
+		
+	}
+	when {
+		getemplinfo.EmplID >=100;
+	}
+	then {
+		System.debugOut("************GetEmplInfoRuleV1*******************");
+		int emplid = getemplinfo.EmplID;
+		Events.GetEmplInfoResponse response  = null;
+
+		Employee empl = Instance.getByExtId(String.valueOfInt(emplid));
+		if (empl != null) {
+		System.debugOut(" #### Employee Details for employee ID: " + String.valueOfInt(emplid));
+		System.debugOut (" #### Name: " + empl.EmployeeName);
+		System.debugOut (" #### Address: " + empl.Address);
+		System.debugOut (" #### City: " + empl.City);
+		System.debugOut(" #### State:  "+empl.State);
+		System.debugOut(" #### Zip Code:  "+empl.Zip);
+		
+		response = Event.createEvent("xslt://{{/Events/GetEmplInfoResponse}}<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xsl:stylesheet xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:ns=\"http://tibco.com/qa/xsd/address\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"2.0\" exclude-result-prefixes=\"xsd\"><xsl:output method=\"xml\"/><xsl:param name=\"empl\"/><xsl:template name=\"Function\" match=\"/\"><createEvent><event><xsl:if test=\"$empl/EmplID\"><EmplID><xsl:value-of select=\"$empl/EmplID\"/></EmplID></xsl:if><payload><ns:Address_Response_Element><ns:EmployeeName><xsl:value-of select=\"$empl/EmployeeName\"/></ns:EmployeeName><ns:CompanyName><xsl:value-of select=\"$empl/CompanyName\"/></ns:CompanyName><ns:Address><xsl:value-of select=\"$empl/Address\"/></ns:Address><ns:City><xsl:value-of select=\"&quot;Old Pune&quot;\"/></ns:City><ns:State><xsl:value-of select=\"$empl/State\"/></ns:State><ns:Zip><xsl:value-of select=\"xsd:int($empl/Zip)\"/></ns:Zip></ns:Address_Response_Element></payload></event></createEvent></xsl:template></xsl:stylesheet>");
+		
+		}
+		else{
+		System.debugOut(" #### Employee for this ID doesn't exists");
+		response = Event.createEvent("xslt://{{/Events/GetEmplInfoResponse}}<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xsl:stylesheet xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:ns=\"http://tibco.com/qa/xsd/address\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"2.0\" exclude-result-prefixes=\"xsd\"><xsl:output method=\"xml\"/><xsl:param name=\"empl\"/><xsl:template name=\"Function\" match=\"/\"><createEvent><event><xsl:if test=\"$empl/EmplID\"><EmplID><xsl:value-of select=\"$empl/EmplID\"/></EmplID></xsl:if><payload><ns:Address_Response_Element><ns:EmployeeName><xsl:value-of select=\"&quot;Employee Does not Exist&quot;\"/></ns:EmployeeName><ns:CompanyName><xsl:value-of select=\"&quot;NA&quot;\"/></ns:CompanyName><ns:Address><xsl:value-of select=\"&quot;NA&quot;\"/></ns:Address><ns:City><xsl:value-of select=\"&quot;NA&quot;\"/></ns:City><ns:State><xsl:value-of select=\"&quot;NA&quot;\"/></ns:State><ns:Zip><xsl:value-of select=\"000\"/></ns:Zip></ns:Address_Response_Element></payload></event></createEvent></xsl:template></xsl:stylesheet>");
+		
+		}
+		Event.replyEvent (getemplinfo, response);
+		Event.consumeEvent(getemplinfo);
+	}
+}

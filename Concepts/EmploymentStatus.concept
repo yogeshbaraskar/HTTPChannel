@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<element:Concept xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:element="http:///com/tibco/cep/designtime/core/model/element" namespace="/Concepts/" folder="/Concepts/" name="EmploymentStatus" description="" GUID="1FCC2FEB-342F-F6C0-55BA-45491DDFF104" ownerProjectName="HTTPChannel" superConceptPath="" autoStartStateMachine="true">
+  <extendedProperties/>
+  <properties name="EmployeeId" ownerProjectName="HTTPChannel" ownerPath="/Concepts/EmploymentStatus"/>
+  <properties name="EmploymentStatus" ownerProjectName="HTTPChannel" conceptTypePath="/Domains/Status" ownerPath="/Concepts/EmploymentStatus">
+    <domainInstances resourcePath="/Domains/Status" ownerProperty="//@properties.1"/>
+  </properties>
+  <properties name="Comment1" ownerProjectName="HTTPChannel" ownerPath="/Concepts/EmploymentStatus"/>
+  <properties name="Comment2" ownerProjectName="HTTPChannel" ownerPath="/Concepts/EmploymentStatus"/>
+  <properties name="Comment3" ownerProjectName="HTTPChannel" ownerPath="/Concepts/EmploymentStatus"/>
+</element:Concept>

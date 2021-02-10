@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event:SimpleEvent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:event="http:///com/tibco/cep/designtime/core/model/event" namespace="/Events/" folder="/Events/" name="GetEmplInfoResponse" description="" GUID="06363590-4088-485A-A551-DF5050F4702C" ownerProjectName="HTTPChannel" superEventPath="" payloadString="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&#xA;&lt;payload ref=&quot;pfx:Address_Response_Element&quot;/>" ttlUnits="Seconds" channelURI="/Channels/HTTP" destinationName="GetEmplInfo">
+  <extendedProperties/>
+  <properties name="EmplID" ownerProjectName="HTTPChannel" type="int" ownerPath="/Events/GetEmplInfoResponse"/>
+  <namespaceEntries prefix="xsd" namespace="http://www.w3.org/2001/XMLSchema"/>
+  <namespaceEntries prefix="pfx" namespace="http://tibco.com/qa/xsd/address"/>
+  <registryImportEntries location="Schema\CompanyAddress.xsd" namespace="http://tibco.com/qa/xsd/address"/>
+  <expiryAction folder="/Events/GetEmplInfoResponseEvent" name="GetEmplInfoResponseEvent_expiryAction" ownerProjectName="HTTPChannel" actionText="" conditionText="">
+    <symbols>
+      <symbolList idName="getemplinforesponseevent" type="/Events/GetEmplInfoResponse"/>
+    </symbols>
+  </expiryAction>
+</event:SimpleEvent>

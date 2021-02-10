@@ -1,0 +1,47 @@
+/**
+ * @description 
+ * @author 
+ */
+rule Rules.PostEmplRule {
+	attribute {
+		priority = 5;
+		forwardChain = true;
+	}
+	declare {
+//		Events.EmplEvent	emplevent;
+		
+		Events.PostEmpl postempl;
+	}
+	when {
+		
+	}
+	then {
+		System.debugOut(String.valueOfInt(postempl.EmplID));
+		
+		System.debugOut("Received a PostImpl event and created an Employee Concept instance using its data");
+		Employee empl = Instance.getByExtId(String.valueOfInt(postempl.EmplID));
+		if(postempl.EmplID > 0)
+		{
+				
+			if(empl!=null)
+			{
+				System.debugOut("#### Employee Account already exists for " + String.valueOfInt(postempl.EmplID));
+			}
+			else
+			{
+				Concepts.Employee c=Instance.createInstance("xslt://{{/Concepts/Employee}}<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xsl:stylesheet xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:ns=\"http://tibco.com/qa/xsd/address\" version=\"2.0\" exclude-result-prefixes=\"xsl ns xsd\"><xsl:output method=\"xml\"/><xsl:param name=\"postempl\"/><xsl:template name=\"Function\" match=\"/\"><createObject><object><xsl:attribute name=\"extId\"><xsl:value-of select=\"xsd:string($postempl/EmplID)\"/></xsl:attribute><xsl:if test=\"$postempl/EmployeeName\"><EmployeeName><xsl:value-of select=\"$postempl/EmployeeName\"/></EmployeeName></xsl:if><xsl:if test=\"$postempl/Zip\"><Zip><xsl:value-of select=\"$postempl/Zip\"/></Zip></xsl:if><xsl:if test=\"$postempl/CompanyName\"><CompanyName><xsl:value-of select=\"$postempl/CompanyName\"/></CompanyName></xsl:if><xsl:if test=\"$postempl/Address\"><Address><xsl:value-of select=\"$postempl/Address\"/></Address></xsl:if><xsl:if test=\"$postempl/City\"><City><xsl:value-of select=\"$postempl/City\"/></City></xsl:if><xsl:if test=\"$postempl/State\"><State><xsl:value-of select=\"$postempl/State\"/></State></xsl:if><xsl:if test=\"$postempl/EmplID\"><EmplID><xsl:value-of select=\"$postempl/EmplID\"/></EmplID></xsl:if></object></createObject></xsl:template></xsl:stylesheet>");
+				System.debugOut(" #### Employee concept is created for Employee ID " + XPath.evalAsString("xpath://<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xpath>\n    <expr>$postempl/EmplID</expr>\n    <namespaces>\n        <namespace URI=\"http://tibco.com/qa/xsd/address\" pfx=\"xsd2\"/>\n        <namespace URI=\"http://www.w3.org/2001/XMLSchema\" pfx=\"xsd\"/>\n    </namespaces>\n    <variables>\n        <variable>postempl</variable>\n    </variables>\n</xpath>"));
+				
+			}				
+		}
+		else
+		{
+			System.debugOut("#### Employee ID is not valid");
+		}
+				
+		PostEmplResponse response = Events.PostEmplResponse.PostEmplResponse(null,null);
+		Event.replyEvent (postempl, response);
+		Event.consumeEvent(postempl);
+
+	}
+}

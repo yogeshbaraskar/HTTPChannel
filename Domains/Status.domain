@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dm:Domain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dm="http:///com/tibco/cep/designtime/core/model/domain" namespace="/Domains/" folder="/Domains/" name="Status" description="" GUID="31A25124-EA42-722F-D57D-54D12F3DD943" ownerProjectName="HTTPChannel">
+  <entries xsi:type="dm:Single" description="ACTIVE" value="ACTIVE"/>
+  <entries xsi:type="dm:Single" description="INACTIVE" value="INACTIVE"/>
+  <entries xsi:type="dm:Single" description="UNKNOWN" value="UNKNOWN"/>
+  <entries xsi:type="dm:Single" description="ALL" value="ALL"/>
+</dm:Domain>

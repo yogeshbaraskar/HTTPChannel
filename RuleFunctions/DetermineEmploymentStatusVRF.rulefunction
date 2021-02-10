@@ -1,0 +1,14 @@
+/**
+ * @description 
+ */
+virtual void rulefunction RuleFunctions.DetermineEmploymentStatusVRF {
+	attribute {
+		validity = ACTION;
+	}
+	scope {
+		Concepts.EmploymentStatus empStatus;
+	}
+	body {
+		
+	}
+}

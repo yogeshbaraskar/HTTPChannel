@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<element:Concept xmlns:element="http:///com/tibco/cep/designtime/core/model/element" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:designtime="http:///com/tibco/cep/designtime/core/model/designtime_ontology.ecore" xmi:version="2.0" namespace="/Concepts/" folder="/Concepts/" name="Employee" description="" lastModified="" GUID="1263985617734-943881913" ownerProjectName="HTTPChannel" superConceptPath="" implClass="" autoStartStateMachine="true">
+  <extendedProperties/>
+  <properties namespace="" name="EmployeeName" description="" lastModified="" GUID="1263985735437-1459344178" ownerProjectName="HTTPChannel" ownerPath="/Concepts/Employee" defaultValue="">
+    <extendedProperties/>
+  </properties>
+  <properties name="Zip" ownerProjectName="HTTPChannel" type="int" ownerPath="/Concepts/Employee"/>
+  <properties namespace="" name="CompanyName" description="" lastModified="" GUID="1263985735437-1683173034" ownerProjectName="HTTPChannel" ownerPath="/Concepts/Employee" order="1" defaultValue="">
+    <extendedProperties/>
+  </properties>
+  <properties namespace="" name="Address" description="" lastModified="" GUID="1263985735437-2097612299" ownerProjectName="HTTPChannel" ownerPath="/Concepts/Employee" order="2" defaultValue="">
+    <extendedProperties/>
+  </properties>
+  <properties namespace="" name="City" description="" lastModified="" GUID="1263985735452-67967582" ownerProjectName="HTTPChannel" ownerPath="/Concepts/Employee" order="3" defaultValue="">
+    <extendedProperties/>
+  </properties>
+  <properties namespace="" name="State" description="" lastModified="" GUID="1263985735452-720038312" ownerProjectName="HTTPChannel" ownerPath="/Concepts/Employee" order="4" defaultValue="">
+    <extendedProperties/>
+  </properties>
+  <properties namespace="" name="EmplID" description="" lastModified="" GUID="1263985735452-820360816" ownerProjectName="HTTPChannel" type="int" ownerPath="/Concepts/Employee" order="5" defaultValue="">
+    <extendedProperties/>
+  </properties>
+</element:Concept>

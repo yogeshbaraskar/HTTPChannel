@@ -1,0 +1,41 @@
+/**
+ * @description 
+ * @author WKSWUPUN1251
+ */
+rule Rules.GetCertifyRule {
+	attribute {
+		priority = 5;
+		forwardChain = true;
+	}
+	declare {
+		Events.GetCertifyRequest getCertifyReq; 
+	}
+	when {
+		
+	}
+	then {
+		System.debugOut("This is GetCertifyRequest rue call ");
+		Events.GetCertifyResponse getCertifyRes = null;
+		
+		int emplid = getCertifyReq.EmplID;
+		
+		Employee empl = Instance.getByExtId(String.valueOfInt(emplid));
+		if (empl != null) {
+		System.debugOut(" #### Employee Details for employee ID: " + String.valueOfInt(emplid));
+		System.debugOut (" #### Name: " + empl.EmployeeName);
+		System.debugOut (" #### Address: " + empl.Address);
+		System.debugOut (" #### City: " + empl.City);
+		System.debugOut(" #### State:  "+empl.State);
+		System.debugOut(" #### Zip Code:  "+empl.Zip);
+	}	
+	
+	//	getCertifyRes = Event.createEvent("xslt://{{/Events/GetCertifyResponse}}<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xsl:stylesheet xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:ns=\"http://tibco.com/qa/xsd/address\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"2.0\" exclude-result-prefixes=\"xsd\"><xsl:output method=\"xml\"/><xsl:template name=\"Function\" match=\"/\"><createEvent><event><EmplID><xsl:value-of select=\"101\"/></EmplID><payload><ns:Address_Response_Element><ns:EmployeeName><xsl:value-of select=\"&quot;Employee Does not Exist&quot;\"/></ns:EmployeeName><ns:CompanyName><xsl:value-of select=\"&quot;NA&quot;\"/></ns:CompanyName><ns:Address><xsl:value-of select=\"&quot;NA&quot;\"/></ns:Address><ns:City><xsl:value-of select=\"&quot;NA&quot;\"/></ns:City><ns:State><xsl:value-of select=\"&quot;NA&quot;\"/></ns:State><ns:Zip><xsl:value-of select=\"000\"/></ns:Zip></ns:Address_Response_Element></payload></event></createEvent></xsl:template></xsl:stylesheet>");
+		
+		getCertifyRes = Event.createEvent("xslt://{{/Events/GetCertifyResponse}}<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:tns=\"www.tibco.com/be/ontology/Events/GetCertifyResponse\" version=\"2.0\"><xsl:template name=\"Function\" match=\"/\"><createEvent><event><payload><tns:root><result><xsl:value-of select=\"&quot;Thank God its working&quot;\"/></result></tns:root></payload></event></createEvent></xsl:template></xsl:stylesheet>");
+	
+		Event.replyEvent (getCertifyReq, getCertifyRes);
+	
+		Event.consumeEvent(getCertifyReq);
+	
+	}
+}

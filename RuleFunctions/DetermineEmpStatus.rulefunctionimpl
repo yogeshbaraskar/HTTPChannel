@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Table:Table xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Table="http:///com/tibco/cep/decision/table/model/DecisionTable.ecore" name="DetermineEmpStatus" folder="/RuleFunctions/" implements="/RuleFunctions/DetermineEmploymentStatusVRF" since="BE 4.0">
+  <md>
+    <prop name="SingleRowExecution" type="Boolean" value="false"/>
+    <prop name="Priority" type="Integer" value="5"/>
+  </md>
+  <decisionTable>
+    <rule id="1">
+      <md>
+        <prop name="Description" type="String" value=""/>
+        <prop name="Priority" type="Integer" value="8"/>
+      </md>
+      <cond id="1_1" colId="1" expr="&quot;50&quot;"/>
+      <act id="1_2" colId="2" expr="&quot;ACTIVE&quot;" displayValue="ACTIVE"/>
+      <act id="1_3" colId="3" expr="&quot;RuleId1&quot;"/>
+    </rule>
+    <rule id="2">
+      <md>
+        <prop name="Description" type="String" value=""/>
+        <prop name="Priority" type="Integer" value="5"/>
+      </md>
+      <cond id="2_1" colId="1" expr="&quot;60&quot;"/>
+      <act id="2_2" colId="2" expr="&quot;INACTIVE&quot;" displayValue="INACTIVE"/>
+      <act id="2_4" colId="4"/>
+    </rule>
+    <rule id="3">
+      <md>
+        <prop name="Description" type="String" value=""/>
+        <prop name="Priority" type="Integer" value="5"/>
+      </md>
+      <cond comment="rule is to find something" id="3_1" colId="1" expr="&quot;50&quot;"/>
+      <act id="3_2" colId="2" expr="&quot;UNKNOWN&quot;" displayValue="UNKNOWN"/>
+      <act id="3_4" colId="4" expr="&quot;RuleId3&quot;"/>
+      <act id="3_3" colId="3" expr="&quot;disabledCell&quot;"/>
+    </rule>
+    <rule id="4">
+      <md>
+        <prop name="Description" type="String" value=""/>
+        <prop name="Priority" type="Integer" value="10"/>
+      </md>
+      <cond id="4_1" colId="1" expr="*"/>
+      <act id="4_2" colId="2" expr="&quot;ALL&quot;" displayValue="ALL"/>
+      <act id="4_5" colId="5" expr="&quot;RuleId4&quot;"/>
+    </rule>
+    <columns>
+      <column id="1" name="empStatus.EmployeeId" propertyPath="/Concepts/EmploymentStatus/EmployeeId" columnType="CONDITION"/>
+      <column id="2" name="empStatus.EmploymentStatus" propertyPath="/Concepts/EmploymentStatus/EmploymentStatus" columnType="ACTION"/>
+      <column id="3" name="empStatus.Comment1" propertyPath="/Concepts/EmploymentStatus/Comment1" columnType="ACTION"/>
+      <column id="4" name="empStatus.Comment2" propertyPath="/Concepts/EmploymentStatus/Comment2" columnType="ACTION"/>
+      <column id="5" name="empStatus.Comment3" propertyPath="/Concepts/EmploymentStatus/Comment3" columnType="ACTION"/>
+      <column id="6" name="Custom Action 5" propertyPath="" columnType="CUSTOM_ACTION"/>
+    </columns>
+  </decisionTable>
+  <exceptionTable/>
+  <argument direction="BOTH">
+    <property path="/Concepts/EmploymentStatus" alias="empStatus" resourceType="CONCEPT"/>
+  </argument>
+</Table:Table>

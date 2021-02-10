@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rms:ArtifactsSummary xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:rms="http:///com/tibco/cep/rms/artifacts/artifacts_summary.ecore" name="HTTPChannel">
+  <addedArtifacts>
+    <artifact artifactPath="/Channels/HTTP" artifactType="channel" containerPath="/Channels"/>
+  </addedArtifacts>
+  <addedArtifacts>
+    <artifact artifactPath="/Concepts/Employee" artifactType="concept" containerPath="/Concepts"/>
+  </addedArtifacts>
+  <addedArtifacts>
+    <artifact artifactPath="/Events/GetEmplInfo" artifactType="event" containerPath="/Events"/>
+  </addedArtifacts>
+  <addedArtifacts>
+    <artifact artifactPath="/Events/GetEmplInfoResponse" artifactType="event" containerPath="/Events"/>
+  </addedArtifacts>
+  <addedArtifacts>
+    <artifact artifactPath="/Events/PostEmpl" artifactType="event" containerPath="/Events"/>
+  </addedArtifacts>
+  <addedArtifacts>
+    <artifact artifactPath="/Events/PostEmplResponse" artifactType="event" containerPath="/Events"/>
+  </addedArtifacts>
+  <addedArtifacts>
+    <artifact artifactPath="/Rules/GetEmplInfoRule" artifactType="rule" containerPath="/Rules"/>
+  </addedArtifacts>
+  <addedArtifacts>
+    <artifact artifactPath="/Rules/PostEmplRule" artifactType="rule" containerPath="/Rules"/>
+  </addedArtifacts>
+  <addedArtifacts>
+    <artifact artifactPath="/SharedResources/HTTP" artifactType="sharedhttp" containerPath="/SharedResources"/>
+  </addedArtifacts>
+  <addedArtifacts>
+    <artifact artifactPath="/SharedResources/HTTPConnection" artifactType="sharedhttp" containerPath="/SharedResources"/>
+  </addedArtifacts>
+  <addedArtifacts>
+    <artifact artifactPath="/defaultVars/New_Group_1/New_Group_1/defaultVars" artifactType="substvar" containerPath="/defaultVars/New_Group_1/New_Group_1"/>
+  </addedArtifacts>
+  <addedArtifacts>
+    <artifact artifactPath="/defaultVars/defaultVars" artifactType="substvar" containerPath="/defaultVars"/>
+  </addedArtifacts>
+</rms:ArtifactsSummary>
