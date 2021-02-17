@@ -10,7 +10,7 @@
         <prop name="Description" type="String" value=""/>
         <prop name="Priority" type="Integer" value="8"/>
       </md>
-      <cond id="1_1" colId="1" expr="&quot;700&quot;"/>
+      <cond id="1_1" colId="1" expr="&quot;800&quot;"/>
       <act id="1_2" colId="2" expr="&quot;ACTIVE&quot;" displayValue="ACTIVE"/>
       <act id="1_3" colId="3" expr="&quot;RuleId1&quot;"/>
     </rule>
