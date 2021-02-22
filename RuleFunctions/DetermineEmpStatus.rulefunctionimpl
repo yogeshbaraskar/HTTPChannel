@@ -10,7 +10,7 @@
         <prop name="Description" type="String" value=""/>
         <prop name="Priority" type="Integer" value="8"/>
       </md>
-      <cond id="1_1" colId="1" expr="&quot;900&quot;"/>
+      <cond id="1_1" colId="1" expr="&quot;1000&quot;"/>
       <act id="1_2" colId="2" expr="&quot;ACTIVE&quot;" displayValue="ACTIVE"/>
       <act id="1_3" colId="3" expr="&quot;RuleId1&quot;"/>
     </rule>
@@ -28,10 +28,12 @@
         <prop name="Description" type="String" value=""/>
         <prop name="Priority" type="Integer" value="5"/>
       </md>
-      <cond comment="rule is to find something" id="3_1" colId="1" expr="&quot;50&quot;"/>
-      <act id="3_2" colId="2" expr="&quot;UNKNOWN&quot;" displayValue="UNKNOWN"/>
-      <act id="3_4" colId="4" expr="&quot;RuleId3&quot;"/>
-      <act id="3_3" colId="3" expr="&quot;disabledCell&quot;"/>
+      <cond comment="rule is to find something" enabled="false" id="3_1" colId="1" expr="&quot;50&quot;"/>
+      <act enabled="false" id="3_2" colId="2" expr="&quot;UNKNOWN&quot;" displayValue="UNKNOWN"/>
+      <act enabled="false" id="3_4" colId="4" expr="&quot;RuleId3&quot;"/>
+      <act enabled="false" id="3_3" colId="3" expr="&quot;disabledCell&quot;"/>
+      <act enabled="false" id="3_5" colId="5" expr=""/>
+      <act enabled="false" id="3_6" colId="6" expr=""/>
     </rule>
     <rule id="4">
       <md>
